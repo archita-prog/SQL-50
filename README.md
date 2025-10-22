@@ -7,41 +7,38 @@ Each solution is written to emphasize **clean query structure, logical reasoning
 
 ---
 
-📘 SQL-LeetCode-50
-│
-├── 01_basic_select/
-│ ├── 1757. Recyclable and Low Fat Products.sql
-│ ├── 584. Find Customer Referee.sql
-│ ├── 595. Big Countries.sql
-│ ├── 1148. Article Views I.sql
-│ └── Invalid Tweets
-
-│
-├── 02_Basic_joins/
-│ ├── 1378. Replace Employee ID With The Unique Identifier.sql
-│ ├── 1068. Product Sales Analysis.sql
-│ ├── 1581. Customer Who Visited but Did Not Make Any Transactions.sql
-│ └── 197. Rising Temperature.sql
-| └── 1661. Average Time of Process per Machine.sql
-|└── 577. Employee Bonus.sql
-|└── 1280. Students and Examinations.sql
-|└── 570. Managers with at Least 5 Direct Reports.sql
-|└── 1397. Confirmation Rate.sql
-
-├── 03_Basic Aggregate Functions/
-│ ├── 
-│ ├── 
-│ ├── 
-│ └── ...
-│
-├── 04_subqueries_ctes/
-│ ├── 184. Department Highest Salary.sql
-│ ├── 626. Exchange Seats.sql
-│ └── ...
-│
-└── README.md
-
 
 ---
 
+## 💡 Learning Focus
 
+| Concept | Description |
+|----------|-------------|
+| **SELECT, WHERE, ORDER BY** | Core query syntax and filtering conditions |
+| **GROUP BY & HAVING** | Aggregations and logical grouping |
+| **JOIN (INNER, LEFT, SELF)** | Combining relational data |
+| **Subqueries** | Nested logic and data dependency |
+| **Window Functions** | Ranking, cumulative sums, and moving averages |
+| **CTEs (Common Table Expressions)** | Breaking down complex queries for readability |
+| **CASE WHEN** | Conditional logic within SQL |
+
+---
+
+## 🧩 Example Problem
+
+### 🔹 Problem: Department Highest Salary  
+**LeetCode #184**
+
+**Goal:** Find the employee(s) with the highest salary in each department.
+
+```sql
+SELECT D.name AS Department,
+       E.name AS Employee,
+       E.salary AS Salary
+FROM Employee E
+JOIN Department D ON E.departmentId = D.id
+WHERE (E.departmentId, E.salary) IN (
+    SELECT departmentId, MAX(salary)
+    FROM Employee
+    GROUP BY departmentId
+);
