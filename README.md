@@ -1,7 +1,7 @@
 # 🧠 SQL LeetCode 50 — Problem Solutions and Insights
 
 Welcome to my **SQL LeetCode 50 Questions Repository**!  
-This repository contains **solutions, explanations, and learning notes** for the top 50 SQL problems on [LeetCode](https://leetcode.com/problemset/database/).  
+This repository contains **solutions, explanations, and learning notes** for the study plan of top 50 SQL problems on [LeetCode](https://leetcode.com/problemset/database/).  
 
 Each solution is written to emphasize **clean query structure, logical reasoning, and performance optimization** — helping not just to solve, but to **understand SQL deeply**.
 
